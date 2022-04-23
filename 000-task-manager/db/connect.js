@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
-const myDB = process.env.MY_DATA;
+//const myDB = process.env.MY_DATA;
 
-mongoose.connect(myDB)
-        .then(() => console.log('Connected to the db...'))
-        .catch((err) => console.log(err));
+const connectDB = (url) => {
+     return mongoose.connect(url)
+}
 
-// module.exports = {
-//     myDB
-// }
+
+
+
+//old but gold
+// mongoose.connect(myDB)
+//         .then(() => console.log('Connected to the db...'))
+//         .catch((err) => console.log(err));
+
+module.exports = connectDB;
