@@ -1,0 +1,20 @@
+{
+    "name": "001-low-latency-iot-app-with-scylladb",
+    "version": "1.0.0",
+    "description": "---\r stack: node js, scyllaDB\r lang: all\r ---",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon src/app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cassandra-driver": "^4.6.3",
+        "casual": "^1.6.2",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.1",
+        "moment": "^2.29.3",
+        "nodemon": "^2.0.16"
+    }
+}
