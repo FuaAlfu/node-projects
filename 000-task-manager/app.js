@@ -3,6 +3,7 @@ require('dotenv').config();
 const connectDB = require('./db/connect');
 const express = require('express');
 const tasks = require('./routes/tasks');
+const notFound = require('./middleware/not-found');
 const app = express();
 const port = process.env.PORT;
 
@@ -12,6 +13,7 @@ app.use(express.json());
 
 //routes
 app.use('/api/v1/tasks',tasks);
+app.use(notFound);
 
 app.get("/",(req, res) => {
     res.send("starter page");
