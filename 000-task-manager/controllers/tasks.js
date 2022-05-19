@@ -32,6 +32,7 @@ const getTask = asyncWrapper( async (req,res,next) => {
         const {id:taskID} = req.params;
         const task = await Task.findOne({_id:taskID});
         if(!task){
+            //error handle stuff
             // const error = new Error('not found');
             // error.status = 404;
             // return next(error);
