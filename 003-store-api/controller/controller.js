@@ -1,4 +1,5 @@
 const getAllProductsStatics = (req,res) => {
+    throw new Error('Not Found --> testing aysinc error');
     res.status(200).json({msg:'Products testing route'});
 }
 

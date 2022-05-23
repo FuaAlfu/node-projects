@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('express-async-errors');
 
 const connectDB = require('./db/connect');
 const router = require('./routes/products');
@@ -16,6 +17,8 @@ app.use(express.json());
 app.get('/', (req,res) => {
     res.send('<h2>Store API</h2><br><a href="/api/v1/products">products route</a>');
 }); //for testing
+
+app.use('/api/v1/products',router)
 
 //products route
 
