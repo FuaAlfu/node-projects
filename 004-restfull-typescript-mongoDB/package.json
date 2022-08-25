@@ -2,7 +2,7 @@
     "name": "004-restfull-typescript-mongodb",
     "version": "1.0.0",
     "description": "---\r stack: node js, typescript, MongoDB\r lang: all\r ---",
-    "main": "index.js",
+    "main": "src/server.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "rm -rf build/ && tsc",
