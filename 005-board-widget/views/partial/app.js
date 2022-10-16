@@ -42,16 +42,28 @@ let events = [
         task: "coocking",
         place: "3rd floor - kitchen",
         remarks: "on time"
-    },
+    }
 ];
 
 function populateTable(){
-    for(const event in events){
+    for(const event of events){
        const tableRow = document.createElement("tr");
        for(const eventDetails in event){
         const tableCell = document.createElement("td");
         console.log(`event details: ${eventDetails}`);
+        const word = Array.from(event[eventDetails])
+       // tableCell.innerText = eventDetails;
+      // tableCell.innerText = event[eventDetails];
+        for(const letter of word){
+          const letterElement = document.createElement('div');
+          letterElement.classList.add('flip');
+          letterElement.textContent = letter;
+          tableCell.append(letterElement);
+        }
+        tableRow.append(tableCell);
        }
        tableBody.append(tableRow);
     }
 }
+
+populateTable();
