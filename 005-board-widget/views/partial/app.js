@@ -54,8 +54,12 @@ function populateTable(){
         const word = Array.from(event[eventDetails])
        // tableCell.innerText = eventDetails;
       // tableCell.innerText = event[eventDetails];
-        for(const letter of word){
+        for(const [index,letter] of word.entries()){
           const letterElement = document.createElement('div');
+
+          setTimeout(()=>{
+              
+          })
           letterElement.classList.add('flip');
           letterElement.textContent = letter;
           tableCell.append(letterElement);

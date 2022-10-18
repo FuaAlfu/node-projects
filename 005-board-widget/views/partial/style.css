@@ -38,3 +38,43 @@ header {
     float: left;
     height: 48px;
 }
+
+.stuff table td {
+    height: 50%;
+}
+
+#time {
+    width: 160px;
+}
+
+#turn {
+    width: 260px;
+}
+
+#task {
+    width: 285px;
+}
+
+#place {
+    width: 135px;
+}
+
+#remarks {
+    width: 260px;
+}
+
+.flip {
+    animation: 0.5s linear flipping;
+}
+
+@keyframes flipping {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
