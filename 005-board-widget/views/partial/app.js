@@ -45,6 +45,10 @@ let events = [
     }
 ];
 
+const task = ["Clean","Coding","Coloring","Drawing","Cooking","Resting","Playing","Searching"];
+const remarks = ["On Time", "Cancelled","Delayed"];
+let hour = 15;
+
 function populateTable(){
     for(const event of events){
        const tableRow = document.createElement("tr");
@@ -58,11 +62,10 @@ function populateTable(){
           const letterElement = document.createElement('div');
 
           setTimeout(()=>{
-              
-          })
-          letterElement.classList.add('flip');
-          letterElement.textContent = letter;
-          tableCell.append(letterElement);
+            letterElement.classList.add('flip');
+            letterElement.textContent = letter;
+            tableCell.append(letterElement);
+          },100 * index)
         }
         tableRow.append(tableCell);
        }
@@ -71,3 +74,18 @@ function populateTable(){
 }
 
 populateTable();
+
+function generateRandomLetters(){
+    const alphabet = 'ABCDEFGHT'
+}
+
+const shuffleUp = () => {
+    events.shift();
+    events.push({
+        time: generateTime(),
+        turn: "john",
+        task: task[Math.floor(Math.random() * task.length)],
+        place: "3rd floor - right office",
+        remarks: remarks[Math.floor(Math.random() * remarks.length)]
+    })
+}
