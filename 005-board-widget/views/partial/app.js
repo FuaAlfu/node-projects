@@ -76,7 +76,28 @@ function populateTable(){
 populateTable();
 
 function generateRandomLetters(){
-    const alphabet = 'ABCDEFGHT'
+    const alphabet = 'ABCDEFGHTMNBVCXZLKJPOI'
+    return alphabet.charAt(Math.floor(Math.random() * alphabet.length))
+}
+
+function generateRandomNumber(){
+    const number = '0123456789'
+    return number.charAt(Math.floor(Math.random() * number.length))
+}
+
+function generateTime(){
+    let displayHour = hour;
+    if(hour < 24){
+        hour++;
+    }
+    if(hour >= 24){
+        hour = 1;
+        displayHour = hour;
+    }
+    if(hour < 10){
+        displayHour = "0" + hour;
+    }
+    return displayHour + ":" + generateRandomNumber(5) + generateRandomNumber();
 }
 
 const shuffleUp = () => {
@@ -85,7 +106,7 @@ const shuffleUp = () => {
         time: generateTime(),
         turn: "john",
         task: task[Math.floor(Math.random() * task.length)],
-        place: "3rd floor - right office",
+        place: generateRandomLetters() + " " + generateRandomNumber() + generateRandomLetters(),
         remarks: remarks[Math.floor(Math.random() * remarks.length)]
     })
 }
