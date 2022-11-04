@@ -80,8 +80,12 @@ function generateRandomLetters(){
     return alphabet.charAt(Math.floor(Math.random() * alphabet.length))
 }
 
-function generateRandomNumber(){
-    const number = '0123456789'
+function generateRandomNumber(maxNumber){
+    const number = '0123456789';
+    if(maxNumber){
+        const newNumbers = number.slice(0, maxNumber + 1);
+        return newNumbers.charAt(Math.floor(Math.random() * newNumbers.length))
+    }
     return number.charAt(Math.floor(Math.random() * number.length))
 }
 
@@ -108,5 +112,9 @@ const shuffleUp = () => {
         task: task[Math.floor(Math.random() * task.length)],
         place: generateRandomLetters() + " " + generateRandomNumber() + generateRandomLetters(),
         remarks: remarks[Math.floor(Math.random() * remarks.length)]
-    })
+    });
+    tableBody.textContent = "";
+    populateTable();
 }
+
+setInterval(shuffleUp, 2000);
